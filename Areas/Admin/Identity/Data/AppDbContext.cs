@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MyCMS.Areas.Identity.Data;
 
-namespace MyCMS.Data;
+namespace MyCMS.Areas.Admin.Identity.Data;
 
 public class AppDbContext : IdentityDbContext<User>
 {
