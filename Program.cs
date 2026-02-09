@@ -11,6 +11,7 @@ builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfi
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
@@ -25,9 +26,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
-
-app.MapStaticAssets();
 
 app.Use(async (context, next) =>
 {
@@ -39,10 +39,16 @@ app.Use(async (context, next) =>
 	await next();
 });
 
+app.MapStaticAssets();
+app.MapRazorPages();
+
 app.MapControllerRoute(
-    name: "default",
+    name: "areas",
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
+app.MapControllerRoute(
+	name: "default",
+	pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
 app.Run();

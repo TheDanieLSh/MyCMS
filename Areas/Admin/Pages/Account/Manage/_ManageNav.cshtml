@@ -1,4 +1,4 @@
-﻿@using MyCMS.Areas.Admin.Identity.Account.Manage
+﻿@using MyCMS.Areas.Admin.Pages.Account.Manage
 @inject SignInManager<User> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();

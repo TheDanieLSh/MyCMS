@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyCMS.Areas.Admin.Identity.Data;
 
-namespace MyCMS.Areas.Identity.Pages.Account.Manage
+namespace MyCMS.Areas.Admin.Pages.Account.Manage
 {
     public class IndexModel : PageModel
     {
