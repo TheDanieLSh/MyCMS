@@ -33,8 +33,4 @@
     <AdditionalFiles Include="Areas\Admin\Views\_ViewStart.cshtml" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Identity\Новая папка\" />
-  </ItemGroup>
-
 </Project>
