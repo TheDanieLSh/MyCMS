@@ -35,6 +35,7 @@
     <AdditionalFiles Include="Areas\Admin\Pages\Account\Manage\_ViewImports.cshtml" />
     <AdditionalFiles Include="Areas\Admin\Pages\Account\Register.cshtml" />
     <AdditionalFiles Include="Areas\Admin\Pages\Account\_ViewImports.cshtml" />
+    <AdditionalFiles Include="Areas\Admin\Pages\Shared\_Layout.cshtml" />
     <AdditionalFiles Include="Areas\Admin\Pages\Shared\_ValidationScriptsPartial.cshtml" />
     <AdditionalFiles Include="Areas\Admin\Pages\Test.cshtml" />
     <AdditionalFiles Include="Areas\Admin\Pages\_ValidationScriptsPartial.cshtml" />
