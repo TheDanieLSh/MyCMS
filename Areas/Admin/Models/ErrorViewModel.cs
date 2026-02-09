@@ -1,4 +1,4 @@
-namespace MyCMS.Models
+namespace MyCMS.Areas.Admin.Models
 {
     public class ErrorViewModel
     {

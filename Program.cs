@@ -29,9 +29,19 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
+app.Use(async (context, next) =>
+{
+	if (context.Request.Path == "/" || context.Request.Path == "/index")
+	{
+		context.Response.Redirect("/admin");
+		return;
+	}
+	await next();
+});
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
 

@@ -1,10 +1,11 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using MyCMS.Models;
+using MyCMS.Areas.Admin.Models;
 
-namespace MyCMS.Controllers
+namespace MyCMS.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+	[Area("Admin")]
+	public class HomeController : Controller
     {
         public IActionResult Index()
         {
