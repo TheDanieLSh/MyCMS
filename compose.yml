@@ -1,0 +1,32 @@
+version: "1.0"
+
+services:
+  
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ASP.NET-server_MyCMS
+    ports:
+      - "5000:8080"
+    depends_on:
+      - postgres
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=mycms;Username=postgres;Password=postgres
+
+  postgres:
+    image: postgres:16
+    container_name: PostgeSQL_MyCMS
+    restart: always
+    environment:
+      POSTGRES_DB: mycms
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:  
