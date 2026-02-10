@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace MyCMS.Areas.Admin.Identity.Data;
+namespace MyCMS.Areas.Admin.Data;
 
 // Add profile data for application users by adding properties to the User class
 public class User : IdentityUser

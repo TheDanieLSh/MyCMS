@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MyCMS.Areas.Admin.Data;
 
 namespace MyCMS.Areas.Admin.Identity.Data;
 

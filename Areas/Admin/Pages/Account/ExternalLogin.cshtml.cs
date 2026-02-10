@@ -17,7 +17,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using MyCMS.Areas.Admin.Identity.Data;
+using MyCMS.Areas.Admin.Data;
 
 namespace MyCMS.Areas.Identity.Pages.Account
 {

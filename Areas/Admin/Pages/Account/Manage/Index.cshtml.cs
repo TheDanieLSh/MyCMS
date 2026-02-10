@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MyCMS.Areas.Admin.Identity.Data;
+using MyCMS.Areas.Admin.Data;
 
 namespace MyCMS.Areas.Admin.Pages.Account.Manage
 {

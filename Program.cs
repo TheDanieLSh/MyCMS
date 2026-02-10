@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using MyCMS.Areas.Admin.Data;
 using MyCMS.Areas.Admin.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
