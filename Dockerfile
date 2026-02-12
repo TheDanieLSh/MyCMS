@@ -1,30 +1,27 @@
-# См. статью по ссылке https://aka.ms/customizecontainer, чтобы узнать как настроить контейнер отладки и как Visual Studio использует этот Dockerfile для создания образов для ускорения отладки.
-
-# Этот этап используется при запуске из VS в быстром режиме (по умолчанию для конфигурации отладки)
+# Базовый образ для рантайма
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS base
 USER $APP_UID
 WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
+EXPOSE 5000
+EXPOSE 5001
 
-
-# Этот этап используется для сборки проекта службы
-FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
-ARG BUILD_CONFIGURATION=Release
+# Полный SDK + исходники + горячая перезагрузка
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS development
 WORKDIR /src
-COPY ["MyCMS.csproj", "."]
-RUN dotnet restore "./MyCMS.csproj"
+
+# Копируем все исходники
 COPY . .
-WORKDIR "/src/."
-RUN dotnet build "./MyCMS.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet restore "MyCMS.csproj"
 
-# Этот этап используется для публикации проекта службы, который будет скопирован на последний этап
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./MyCMS.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+# Устанавливаем EF Tools глобально
+RUN dotnet tool install --global dotnet-ef --version 10.0.3
+ENV PATH="$PATH:${PATH}:/root/.dotnet/tools"
 
-# Этот этап используется в рабочей среде или при запуске из VS в обычном режиме (по умолчанию, когда конфигурация отладки не используется)
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "MyCMS.dll"]
+# Горячая перезагрузка (hot reload)
+EXPOSE 5000
+EXPOSE 5001
+
+# Финальный образ разработки
+FROM development AS final
+WORKDIR /src
+ENTRYPOINT ["dotnet", "watch", "--project", "MyCMS.csproj", "run", "--launch-profile", "Container (Dockerfile)"]
