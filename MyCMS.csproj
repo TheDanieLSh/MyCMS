@@ -21,33 +21,4 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\AccessDenied.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\ExternalLogin.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\Login.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\Logout.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\Manage\ChangePassword.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\Manage\Index.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\Manage\_Layout.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\Manage\_ManageNav.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\Manage\_StatusMessage.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\Manage\_ViewImports.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\Register.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Account\_ViewImports.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Shared\_Layout.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Shared\_ValidationScriptsPartial.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\Test.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\_ValidationScriptsPartial.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\_ViewImports.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Pages\_ViewStart.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Views\Home\Index.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Views\Home\Privacy.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Views\Shared\Error.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Views\Shared\_LoginPartial.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Views\_ViewImports.cshtml" />
-    <AdditionalFiles Include="Areas\Admin\Views\_ViewStart.cshtml" />
-  </ItemGroup>
-
 </Project>
