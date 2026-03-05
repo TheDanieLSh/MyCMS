@@ -21,7 +21,6 @@ services:
   postgres:
     image: postgres:16
     container_name: PostgeSQL_MyCMS
-    restart: always
     environment:
       POSTGRES_DB: mycms
       POSTGRES_USER: postgres
